@@ -15,8 +15,6 @@ create table usuario(
 
 ALTER TABLE usuario MODIFY senha varchar(200);
 
-insert into usuario (nome, email, senha) values ('teste', 'teste@teste.com', '1234'); 
-
 select * from usuario;
 
 truncate usuario;
@@ -25,10 +23,16 @@ describe usuario;
 
 drop table usuario;
 
-create table biblioteca(
+create table livro(
 idLivro int auto_increment,
 nome varchar(60) not null,
-dtPosse datetime not null,
+genero varchar(20),
+autor varchar(30),
+dtPosse datetime,
 primary key(idLIvro)
 );
 
+drop table livro;
+
+select * from livro;
+truncate table livro;

@@ -22,12 +22,22 @@ include('protect.php');
     <form action="painelCad.php" method="post">
         <div>
             <div>
+                <input name="idLivro" type="text" placeholder="Código do Livro">
+            </div>
+        </div>
+        <div>
+            <div>
                 <input name="livro" type="text" placeholder="Nome do livro" autofocus>
             </div>
         </div>
         <div>
             <div>
-                <input name="idLivro" type="text" placeholder="Código do Livro">
+                <input name="genero" type="text" placeholder="Gênero">
+            </div>
+        </div>
+        <div>
+            <div>
+                <input name="autor" type="text" placeholder="Autor">
             </div>
         </div>
         <div>
@@ -35,7 +45,7 @@ include('protect.php');
                 <input name="dtPosse"type="datetime-local">
             </div>
         </div>
-        <button type="submit">Alugar</button>
+        <button type="submit">Cadastrar livro</button>
     </form>
 
 </body>

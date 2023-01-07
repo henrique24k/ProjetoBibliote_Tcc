@@ -2,8 +2,10 @@
 
 include("conexao.php");
 
-$livro = $_POST ['livro'];
 $idLivro = $_POST ['idLivro'];
+$livro = $_POST ['livro'];
+$genero = $_POST['genero'];
+$autor = $_POST['autor'];
 $dtPosse = $_POST['dtPosse'];
 
 $host = "localhost:3306";
@@ -12,9 +14,8 @@ $pass = "root";
 $base = "DBlogin";
 $con = $mysqli;
 
-$res = mysqli_query($con,"insert into biblioteca (idLivro, nome, dtPosse) values ($idLivro,'$livro', '$dtPosse')");
-echo"Livro alugado com sucesso!";
-
+$res = mysqli_query($con, "insert into livro (idLivro, nome, genero, autor, dtPosse) values ($idLivro,'$livro', '$genero', '$autor', '$dtPosse')");
+echo "Livro cadastrado com sucesso!";
 
 mysqli_close($con);
 
