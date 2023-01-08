@@ -48,5 +48,7 @@ include('protect.php');
         <button type="submit">Cadastrar livro</button>
     </form>
 
+    <a href="livros.php">Ver livros Cadastrados</a>
+
 </body>
 </html>
