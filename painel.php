@@ -1,25 +1,31 @@
 <?php
 session_start();
-include('protect.php');
-
+include('conexao.php');
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo.png" type="image/png">
     <title>Painel</title>
 </head>
-<body>
-    Bem vindo ao painel, <?php echo $_SESSION['name']; ?>
 
+<body>
+
+    <p>Bem vindo ao painel,
+        <?php echo $_SESSION['name']; ?>
+    </p>
     <p>
         <a href="logout.php">Sair</a>
     </p>
 
-    <form action="painelCad.php" method="post">
+
+
+    <!-- <form action="painelCad.php" method="post">
         <div>
             <div>
                 <input name="idLivro" type="text" placeholder="Código do Livro">
@@ -48,7 +54,8 @@ include('protect.php');
         <button type="submit">Cadastrar livro</button>
     </form>
 
-    <a href="livros.php">Ver livros Cadastrados</a>
+    <a href="livros.php">Ver livros Cadastrados</a> -->
 
 </body>
+
 </html>

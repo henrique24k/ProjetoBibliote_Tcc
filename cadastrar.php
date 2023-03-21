@@ -2,10 +2,12 @@
 session_start();
 
 include("conexao.php");
+// $id = mysqli_real_escape_string($mysqli, trim($_POST['id']));
 $nome = mysqli_real_escape_string($mysqli, trim($_POST['nome']));//O método trim() remove os espaços em branco (whitespaces) do início e/ou fim de um texto. 
 $sobrenome = mysqli_real_escape_string($mysqli, trim($_POST['sobrenome']));
-$celular = mysqli_real_escape_string($mysqli, trim($_POST['celular']));
-$nascimento = mysqli_real_escape_string($mysqli, trim($_POST['nascimento']));
+$curso = mysqli_real_escape_string($mysqli, trim($_POST['curso']));
+$periodo = mysqli_real_escape_string($mysqli, trim($_POST['periodo']));
+$instituicao = mysqli_real_escape_string($mysqli, trim($_POST['instituicao']));
 $email = mysqli_real_escape_string($mysqli, trim($_POST['email']));
 $senha = mysqli_real_escape_string($mysqli, trim($_POST['senha']));
 // $senha = mysqli_real_escape_string($mysqli, trim(md5($_POST['senha'])));
@@ -20,7 +22,7 @@ if($row == 1){
     exit;
 }
 
-$sql = "INSERT INTO usuario (nome, sobrenome, celular, dtNasc, email, senha) VALUES ('$nome', '$sobrenome', '$celular', '$nascimento', '$email', '$senha')";
+$sql = "INSERT INTO usuario (nome, sobrenome, curso, periodo, instituicao, email, senha) VALUES ('$nome', '$sobrenome', '$curso', '$periodo', '$instituicao', '$email', '$senha')";
 
 if($mysqli->query($sql) === TRUE){
     $_SESSION['status_cadastro'] = true;
