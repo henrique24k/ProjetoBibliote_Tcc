@@ -18,7 +18,7 @@ session_start();
         <h3>Sistema de Cadastro</h3>
         <p>Faça login informando o seu usuário e senha <a href="loginUser.php">aqui</a></p>
         <div>
-            <form action="cadastrar.php" method="POST">
+            <form action="cadastrar.php" method="POST" enctype="multpart/form-data">
                 <!-- <div>
                     <div>
                         <input name="id" type="text" placeholder="RM ou RG" autofocus>
@@ -34,6 +34,11 @@ session_start();
                         <input name="sobrenome" type="text" placeholder="Sobrenome">
                     </div>
                 </div>
+                <!-- <div>
+                    <div>
+                        <input name="foto" type="file">
+                    </div>
+                </div> -->
                 <div>
                     <div>
                         <input name="curso" type="text" placeholder="Curso">

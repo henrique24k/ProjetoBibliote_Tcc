@@ -1,3 +1,35 @@
+<?php
+session_start();
+include('conexao.php');
+
+
+if (isset($_FILES['arquivo'])) {
+    $arquivo = $_FILES['arquivo'];
+    $texto = $_POST['texto'];
+
+    if ($arquivo['error'])
+        die("Falha ao enviar o arquivo");
+
+    $pasta = "arquivos/";
+    $nomeArquivo = $arquivo['name'];
+    $novoNomeArquivo = uniqid(); //dar um nome aleatorio para o arquivo para não sobrescrever
+    $extensao = strtolower(pathinfo($nomeArquivo, PATHINFO_EXTENSION));
+
+    if ($extensao == "php")
+        die("Tipo de arquivo invalido");
+
+    $path = $pasta . $novoNomeArquivo . "." . $extensao;
+
+    $deuCerto = move_uploaded_file($arquivo["tmp_name"], $path);
+    if ($deuCerto) {
+        $mysqli->query("INSERT INTO arquivos (nome, texto, path) VALUES ('$nomeArquivo', '$texto', '$path')") or die($mysqli->error);
+        echo "Arquivo enviado com sucesso";
+    } else
+        echo "Falha ao enviar arquivo";
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -45,37 +77,25 @@
         </nav>
     </header>
 
-<p><a href="criarPubli.php">Fazer publicação</a></p>
-
-    <?php
-
-    $host = "localhost:3306";
-    $user = "root";
-    $pass = "root";
-    $base = "sistemalogin";
-    $con = mysqli_connect($host, $user, $pass, $base);
-    $res = mysqli_query($con, "select * from arquivos"); //consulta BD
+<p>Gostaria de criar uma publicação,
+        <?php echo $_SESSION['name']; ?> ?
+    </p>
     
 
-    //  executa o comando sql, no caso para pegar todos os usuários do sistema e retorna o valor da consulta em uma variável ($res)
-    
+    <form enctype="multipart/form-data" method="POST" action="">
+        <p><label for="">Digite o que esta pensando</label><input type="text" name="texto"></p>
+        <p><label for="">Selecione o arquivo</label>
+            <input name="arquivo" type="file">
+        </p>
+        <button name="upload" type="submit">Enviar arquivo</button>
+    </form>
 
-    // enquanto houver dados na tabela 
-    while ($arquivo = mysqli_fetch_array($res)) {
-        echo "</td> <td>" . $arquivo['texto'] . "</td> </tr>";
+    <a href="painel.php">Time Line</a>
 
-        echo '<div class="containerPhp"><img src="' . $arquivo['path'] . '" width="10%" /></div>';
-    }
+        <a href="logout.php">Sair</a>
 
-    echo "</table> </br> </br>";
-
-    mysqli_close($con);
-
-    ?>
+   
 
 </body>
-
-</html>
-
 
 </html>
