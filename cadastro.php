@@ -64,6 +64,11 @@ session_start();
                         <input name="senha" type="password" placeholder="Senha">
                     </div>
                 </div>
+                <div>
+                    <div>
+                        <input name="rgrm" type="text" placeholder="Rg ou Rm">
+                    </div>
+                </div>
                 <button type="submit">Cadastrar</button>
             </form>
         </div>

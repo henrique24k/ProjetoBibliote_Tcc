@@ -5,12 +5,17 @@ include('conexao.php');
 // $login = $_POST ['login'];
 // $senha = $_POST ['senha'];
 
+$email = $_POST['email'];
 $host = "localhost:3306";
 $user = "root";
 $pass = "root";
 $base = "sistemaLogin";
 $con = mysqli_connect($host, $user, $pass, $base);
-$res = mysqli_query ($con, "select * from usuario"); //consulta BD
+// $res = sprintf('select * from usuario where email = %s', $email );
+// $res = mysqli_query($con, sprintf('select * from usuario where email = %s', $email ));
+$res = mysqli_query($con, "select * from usuario where email = '.$email'" );
+
+// $res = mysqli_query ($con, "select * from usuario where email = 'henrique@teste.com'"); //consulta BD
 
 
 //  executa o comando sql, no caso para pegar todos os usuários do sistema e retorna o valor da consulta em uma variável ($res)
@@ -19,7 +24,7 @@ $res = mysqli_query ($con, "select * from usuario"); //consulta BD
 // enquanto houver dados na tabela 
     while ($escrever = mysqli_fetch_array($res)){
         echo"<ul>
-        <li>" . $escrever['rmRg'] . "</li> 
+        <li>" . $escrever['id'] . "</li> 
         <li>" . $escrever['nome'] . "</li>
         <li>" . $escrever['sobrenome'] . "</li>
         <li>" . $escrever['foto'] . "</li>
@@ -27,6 +32,7 @@ $res = mysqli_query ($con, "select * from usuario"); //consulta BD
         <li>" . $escrever['periodo'] . "</li> 
         <li>" . $escrever['instituicao'] . "</li>
         <li>" . $escrever['email'] . "</li>
+        <li>" . $escrever['rgrm'] . "</li>
         </ul>";
     }
 

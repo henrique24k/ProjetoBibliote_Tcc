@@ -10,6 +10,7 @@ $periodo = mysqli_real_escape_string($mysqli, trim($_POST['periodo']));
 $instituicao = mysqli_real_escape_string($mysqli, trim($_POST['instituicao']));
 $email = mysqli_real_escape_string($mysqli, trim($_POST['email']));
 $senha = mysqli_real_escape_string($mysqli, trim($_POST['senha']));
+$rgrm = mysqli_real_escape_string($mysqli, trim($_POST['rgrm']));
 // $senha = mysqli_real_escape_string($mysqli, trim(md5($_POST['senha'])));
 
 $sql = "select * from usuario where email = '$email'";
@@ -22,7 +23,7 @@ if($row == 1){
     exit;
 }
 
-$sql = "INSERT INTO usuario (nome, sobrenome, curso, periodo, instituicao, email, senha) VALUES ('$nome', '$sobrenome', '$curso', '$periodo', '$instituicao', '$email', '$senha')";
+$sql = "INSERT INTO usuario (nome, sobrenome, curso, periodo, instituicao, email, senha, rgrm) VALUES ('$nome', '$sobrenome', '$curso', '$periodo', '$instituicao', '$email', '$senha', '$rgrm')";
 
 if($mysqli->query($sql) === TRUE){
     $_SESSION['status_cadastro'] = true;
