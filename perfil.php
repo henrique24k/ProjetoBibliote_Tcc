@@ -5,7 +5,7 @@ include('conexao.php');
 // $login = $_POST ['login'];
 // $senha = $_POST ['senha'];
 
-$email = $_POST['email'];
+// $email = $_POST['email'];
 $host = "localhost:3306";
 $user = "root";
 $pass = "root";
@@ -13,9 +13,9 @@ $base = "sistemaLogin";
 $con = mysqli_connect($host, $user, $pass, $base);
 // $res = sprintf('select * from usuario where email = %s', $email );
 // $res = mysqli_query($con, sprintf('select * from usuario where email = %s', $email ));
-$res = mysqli_query($con, "select * from usuario where email = '.$email'" );
+// $res = mysqli_query($con, "select * from usuario where email = '.$email'" );
 
-// $res = mysqli_query ($con, "select * from usuario where email = 'henrique@teste.com'"); //consulta BD
+$res = mysqli_query ($con, "select * from usuario where email = 'henrique@teste.com'"); //consulta BD
 
 
 //  executa o comando sql, no caso para pegar todos os usuários do sistema e retorna o valor da consulta em uma variável ($res)
