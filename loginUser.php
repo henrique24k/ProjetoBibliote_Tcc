@@ -45,7 +45,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./estilo/style.css">
     <link rel="icon" href="./assets/logo.png" type="image/png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -66,7 +66,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
                 <a class="navbar-brand" href="index.php">
                     <img src="./assets/logoBlack.png" width="50%">
                 </a>
-                <form class="row g-3 justify-content-end" method="POST">
+                <form class="row g-2 justify-content-end" method="POST">
                     <div class="col-auto">
                         <label for="inputPassword2" class="visually">E-mail</label>
                         <input type="text" class="form-control" name="email" autofocus
@@ -75,7 +75,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
                     <div class="col-auto">
                         <label for="inputPassword2" class="visually">Senha</label>
                         <input type="password" class="form-control" name="senha" placeholder="*********">
-                        <a class="text-black" href="#">Esqueceu a senha?</a>
+                        <!-- <a class="text-black" href="#">Esqueceu a senha?</a> -->
                     </div>
                     <div class="col-auto">
                         <button type="submit" class="btn btn-dark mt-4">Login</button>
@@ -107,7 +107,10 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
         </div>
 
     </main>
-
+    
+    </main>
+    <footer class="gradient">
+    </footer>
 </body>
 
 </html>

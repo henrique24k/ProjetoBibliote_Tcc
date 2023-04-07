@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.row{
+       justify-content: right;
+       align-items: center;
+       display: inline-block;
+}
+
+.filtro{
+    background-color: grey;
+    width:20%;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+.hacervo{
+    text-align: center;
+}
+
+.hfiltro{
+    text-align:left;
+}
+
+.banners{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.foto-entrar a{
+    margin-left: 45%;
+    width: 10rem;
+    border-radius: 30px;
+}
+
+ .col-auto button{
+    width: 10rem;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+.col-sm button{
+    width: 75%;
+    height: 3.2rem;
+}
+
+.gradient{
+    margin-top: 5rem;
+    height: 20rem;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+
+
+

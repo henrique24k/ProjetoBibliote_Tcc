@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./estilo/style.css">
     <link rel="icon" href="./assets/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -45,9 +45,126 @@
         </nav>
     </header>
 
+    <div class="filtro">
+            <h3>Filtro</h3>
+            <hr>
+            <h3 class="hfiltro">Genêro</h3>
+            <ul class="list-group">
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">First checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Second x</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+                <li class="">
+                    <input class="form-check-input me-1" type="checkbox">
+                    <label class="form-check-label">Third checkbox</label>
+                </li>
+            </ul>
+        </div>
 
-    <h3>Top Avaliados</h3>
+
+    <h3 class="hacervo">Top Avaliados</h3>
     <div class="row row-cols-1 row-cols-md-3 g-4">
+        
         <div class="card mb-3" style="max-width: 430px;">
             <div class="row g-0">
                 <div class="col-md-4">
@@ -81,7 +198,7 @@
 
     </div>
 
-    <h3>Aclamados pela critica</h3>
+    <h3 class="hacervo">Aclamados pela critica</h3>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="card mb-3" style="max-width: 430px;">
             <div class="row g-0">
@@ -115,7 +232,7 @@
         </div>
     </div>
 
-    <h3>Queridinhos do Cinema</h3>
+    <h3 class="hacervo">Queridinhos do Cinema</h3>
     <div class="row row-cols-1 row-cols-md-3 g-4">
         <div class="card mb-3" style="max-width: 430px;">
             <div class="row g-0">

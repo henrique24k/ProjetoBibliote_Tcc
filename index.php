@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="./assets/logo.png" type="image/png">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="./estilo/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
@@ -21,7 +21,7 @@
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="./assets/logo.png" width="50%">
+                    <img src="./assets/logo.png" width="70%">
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
                 <a class="navbar-brand" href="loginUser.php">
-                    <img src="./assets/userLogo.png" width="50%">
+                    <img src="./assets/userLogo.png" width="70%">
                 </a>
             </div>
         </nav>
@@ -47,16 +47,19 @@
 
 
     <main>
-        <div>
-            <img src="./assets/mc.png" class="img-fluid float-start" width="55%">
-            <img src="./assets/pc.png" class="img-fluid float-end" width="40%">
+        <div class="banners">
+            <div class="foto-entrar">
+                <img src="./assets/mc.png" class="img" width="100%">
+                <a href="loginUser.php" class="btn btn-dark">Entrar</a>
+            </div>
+            <div class="foto-pc">
+                <img src="./assets/pc.png" class="img" width="100%">
+            </div>
         </div>
-        <div class="text-center">
-            <a href="loginUser.php" class="btn btn-dark">Entrar</a>
-        </div>
-        <div class="">
-            <img src="./assets/modoclaro.png" class="img-fluid" width="100%">
-        </div>
+        <div class="big-image">
+            <div class="">
+                <img src="./assets/modoclaro.png" class="img-fluid" width="100%">
+            </div>
     </main>
 
     <div class="containerFooter bg-dark">
