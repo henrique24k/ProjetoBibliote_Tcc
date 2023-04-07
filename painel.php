@@ -21,7 +21,7 @@
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="./assets/logo.png" width="50%">
+                    <img src="./assets/logo.png" width="70%">
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
@@ -39,7 +39,7 @@
                     </li>
                 </ul>
                 <a class="navbar-brand" href="perfil.php">
-                    <img src="./assets/userLogo.png" width="50%">
+                    <img src="./assets/userLogo.png" width="70%">
                 </a>
             </div>
         </nav>

@@ -53,7 +53,7 @@ if (isset($_FILES['arquivo'])) {
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="logo.png" width="50%">
+                    <img src="./assets/logo.png" width="50%">
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
@@ -61,7 +61,7 @@ if (isset($_FILES['arquivo'])) {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Acervo</a>
+                        <a class="nav-link text-black" href="acervo.php">Acervo</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="#">Comunidade</a>
@@ -71,7 +71,7 @@ if (isset($_FILES['arquivo'])) {
                     </li>
                 </ul>
                 <a class="navbar-brand" href="perfil.php">
-                    <img src="userLogo.png" width="50%">
+                    <img src="./assets/userLogo.png" width="50%">
                 </a>
             </div>
         </nav>

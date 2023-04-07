@@ -6,73 +6,93 @@ session_start();
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/logo.png" type="image/png">
     <link rel="stylesheet" type="text/css" href="./estilo/style.css">
-    <title>Sistema de Cadastro</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <title>Cadê meu livro?</title>
 </head>
 
 <body>
 
-    <div>
-        <h3>Sistema de Cadastro</h3>
-        <p>Faça login informando o seu usuário e senha <a href="loginUser.php">aqui</a></p>
-        <div>
+    <header>
+        <nav class="navbar">
+            <div class="container">
+                <a class="navbar-brand" href="index.php">
+                    <img src="./assets/logo.png" width="70%">
+                </a>
+                <ul class="nav justify-content-center m-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active text-black" href="index.php">Início
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Acervo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Comunidade</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Serviços</a>
+                    </li>
+                </ul>
+                <a class="navbar-brand" href="loginUser.php">
+                    <img src="./assets/userLogo.png" width="70%">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+
+
+
+    <div class="login">
+        <div class="boxLogin">
+            <img class="logoLogin" src="../assets/logoBlack.png" alt="">
             <form action="cadastrar.php" method="POST" enctype="multpart/form-data">
-                <!-- <div>
-                    <div>
-                        <input name="id" type="text" placeholder="RM ou RG" autofocus>
-                    </div>
-                </div> -->
-                <div>
-                    <div>
-                        <input name="nome" type="text" placeholder="Nome">
-                    </div>
+                <div class="mb-3">
+                    <label>Nome</label>
+                    <input name="nome" type="text" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="sobrenome" type="text" placeholder="Sobrenome">
-                    </div>
+                <div class="mb-3">
+                    <label>Sobrenome</label>
+                    <input name="sobrenome" type="text" class="form-control">
                 </div>
-                <!-- <div>
-                    <div>
-                        <input name="foto" type="file">
-                    </div>
-                </div> -->
-                <div>
-                    <div>
-                        <input name="curso" type="text" placeholder="Curso">
-                    </div>
+                <div class="mb-3">
+                    <label>Curso</label>
+                    <input name="curso" type="text" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="periodo" type="text" placeholder="Periodo">
-                    </div>
+                <div class="mb-3">
+                    <label>Periodo</label>
+                    <input name="periodo" type="text" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="instituicao" type="text" placeholder="Instituicao">
-                    </div>
+                <div class="mb-3">
+                    <label>Instituição</label>
+                    <input name="instituicao" type="text" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="email" type="text" placeholder="E-mail">
-                    </div>
+                <div class="mb-3">
+                    <label>E-mail</label>
+                    <input name="email" type="email" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="senha" type="password" placeholder="Senha">
-                    </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">Senha</label>
+                    <input name="senha" type="password" class="form-control">
                 </div>
-                <div>
-                    <div>
-                        <input name="rgrm" type="text" placeholder="Rg ou Rm">
-                    </div>
+                <div class="mb-3">
+                    <label>Rg ou Rm</label>
+                    <input name="rgrm" type="text" class="form-control">
+                    </br>
+                    <button class="btn btn-dark" type="submit">Cadastrar</button>
                 </div>
-                <button type="submit">Cadastrar</button>
-            </form>
         </div>
+        </form>
+    </div>
     </div>
 
 

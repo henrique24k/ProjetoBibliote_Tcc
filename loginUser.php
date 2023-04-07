@@ -64,7 +64,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="./assets/logoBlack.png" width="50%">
+                    <img src="./assets/logoBlack.png" width="70%">
                 </a>
                 <form class="row g-2 justify-content-end" method="POST">
                     <div class="col-auto">
