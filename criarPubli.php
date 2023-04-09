@@ -49,11 +49,11 @@ if (isset($_FILES['arquivo'])) {
 
 <body>
 
-<header>
+    <header>
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
-                    <img src="./assets/logo.png" width="50%">
+                    <img src="./assets/logo.png" width="70%">
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
@@ -70,19 +70,19 @@ if (isset($_FILES['arquivo'])) {
                         <a class="nav-link text-black" href="#">Serviços</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="perfil.php">
-                    <img src="./assets/userLogo.png" width="50%">
+                <a class="navbar-brand" href="perfil.php?email=<?php echo $_GET['email']; ?>">
+                    <img src="./assets/userLogo.png" width="70%">
                 </a>
             </div>
         </nav>
     </header>
 
-<p>Gostaria de criar uma publicação,
-        <?php echo $_SESSION['name']; ?> ?
+    <p>Gostaria de criar uma publicação,
+        <?php echo $_SESSION['name']; ?>
     </p>
-    
 
-    <form enctype="multipart/form-data" method="POST" action="">
+
+    <form enctype="multipart/form-data" method="POST">
         <p><label for="">Digite o que esta pensando</label><input type="text" name="texto"></p>
         <p><label for="">Selecione o arquivo</label>
             <input name="arquivo" type="file">
@@ -90,11 +90,14 @@ if (isset($_FILES['arquivo'])) {
         <button name="upload" type="submit">Enviar arquivo</button>
     </form>
 
-    <a href="painel.php">Time Line</a>
+    <a class="btn btn-dark" href="painel.php?email=<?php echo $_GET['email']; ?>">
+        timeLine
+    </a>
+    <a class="btn btn-dark" href="logout.php">Sair</a>
 
-        <a href="logout.php">Sair</a>
 
-   
+
+
 
 </body>
 

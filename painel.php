@@ -1,3 +1,14 @@
+<?php
+
+$host = "localhost:3306";
+$user = "root";
+$pass = "root";
+$base = "sistemalogin";
+$con = mysqli_connect($host, $user, $pass, $base);
+$res = mysqli_query($con, "select * from arquivos"); //consulta BD
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,7 +49,7 @@
                         <a class="nav-link text-black" href="#">Serviços</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="perfil.php">
+                <a class="navbar-brand" href="perfil.php?email=<?php echo $_GET['email']; ?>">
                     <img src="./assets/userLogo.png" width="70%">
                 </a>
             </div>
@@ -64,40 +75,25 @@
                     aria-controls="list-settings">Privacidade</a>
                 <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
                     aria-controls="list-settings">Perfil</a>
-                <a class="btn btn-dark" href="criarPubli.php" role="tab" aria-controls="list-settings">Resenhar</a>
+                <a class="btn btn-dark" href="criarPubli.php?email=<?php echo $_GET['email']; ?>">
+                    Resenhar
+                </a>
             </div>
         </div>
     </div>
 
+    <div class="containerFeed">
+        <?php
+        while ($arquivo = mysqli_fetch_assoc($res)){
 
-
-    <?php
-
-    $host = "localhost:3306";
-    $user = "root";
-    $pass = "root";
-    $base = "sistemalogin";
-    $con = mysqli_connect($host, $user, $pass, $base);
-    $res = mysqli_query($con, "select * from arquivos"); //consulta BD
-    
-
-    //  executa o comando sql, no caso para pegar todos os usuários do sistema e retorna o valor da consulta em uma variável ($res)
-    
-
-    // enquanto houver dados na tabela 
-    while ($arquivo = mysqli_fetch_array($res)) {
-        echo "</td> <td>" . $arquivo['texto'] . "</td> </tr>";
-
-        echo '<div class="containerPhp">
-                <img src="' . $arquivo['path'] . '" width="10%" />
-            </div>';
-    }
-
-    echo "</table> </br> </br>";
-
-    mysqli_close($con);
-
-    ?>
+        ?>
+        <p><?php echo $arquivo['texto'];?></p>
+        <img src=" <?php echo $arquivo['path'];?>" width="10%" />
+        <?php
+        };
+            mysqli_close($con);
+        ?>
+    </div>
 
 </body>
 

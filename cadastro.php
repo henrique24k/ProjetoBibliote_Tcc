@@ -22,6 +22,21 @@ session_start();
 <body>
 
     <header>
+    <?php
+        if (isset($_GET["mensagem"])) {
+            
+      
+        ?>
+        <div class="alert alert-danger" role="alert">
+            <h3>
+            <?php
+                echo $_GET["mensagem"];
+            ?>
+            </h3>
+        </div>
+        <?php
+        }
+        ?>
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">

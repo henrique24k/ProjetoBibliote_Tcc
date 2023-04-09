@@ -15,12 +15,17 @@ $rgrm = mysqli_real_escape_string($mysqli, trim($_POST['rgrm']));
 
 $sql = "select * from usuario where email = '$email'";
 $result = mysqli_query($mysqli, $sql);
-$row = mysqli_fetch_assoc($result);
+
+$mensagem = "Email já existe";
+if($result->num_rows == 1){
+    header(sprintf('location: cadastro.php?mensagem=%s', $mensagem ));
+    return;
+}
 
 if($row == 1){
     $_SESSION['usuario_exite'] = true;
     header('location: cadastro.php');
-    exit;
+    return;
 }
 
 $sql = "INSERT INTO usuario (nome, sobrenome, curso, periodo, instituicao, email, senha, rgrm) VALUES ('$nome', '$sobrenome', '$curso', '$periodo', '$instituicao', '$email', '$senha', '$rgrm')";
@@ -32,6 +37,5 @@ if($mysqli->query($sql) === TRUE){
 $conexao->close();
 
 header('location: cadastro.php');
-exit;
 
 ?>

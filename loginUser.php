@@ -1,43 +1,3 @@
-<?php
-include('conexao.php');
-
-if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o processo de login.
-    if (strlen($_POST['email']) == 0) { //Qnt de caracteres
-        echo "Preencha seu email";
-    } else if (strlen($_POST['senha']) == 0) {
-        echo "Preencha sua senha";
-    } else {
-        $email = $mysqli->real_escape_string($_POST['email']); //função para limpar
-        $senha = $mysqli->real_escape_string($_POST['senha']);
-
-        $sql_code = "SELECT * FROM usuario WHERE email = '$email' AND senha = '$senha'";
-        $sql_query = $mysqli->query($sql_code) or die("FALHA NA EXECUÇÃO DO CODIGO SQL: " . $mysqli->error);
-
-        $quantidade = $sql_query->num_rows; //retornar quantas linha a consulta retornou.
-
-        if ($quantidade == 1) {
-            $usuario = $sql_query->fetch_assoc(); //pegar os dados do BD e jogar dentro da variavel usuario
-
-            if (!isset($_SESSION)) {
-                session_start(); //se não existir sessão iniciar uma nova sessão.
-            }
-
-            $_SESSION['id'] = $usuario['idUser'];
-            $_SESSION['name'] = $usuario['nome'];
-
-            header("location: painel.php"); //redirecionar o usuario.
-
-        } else {
-            echo "Falha ao logar! E-mail ou senha incorretos";
-        }
-
-    }
-}
-
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -61,19 +21,34 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
 
 <body>
     <header>
+    <?php
+        if (isset($_GET["mensagem"])) {
+            
+      
+        ?>
+        <div class="alert alert-danger" role="alert">
+            <h3>
+            <?php
+                echo $_GET["mensagem"];
+            ?>
+            </h3>
+        </div>
+        <?php
+        }
+        ?>
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand" href="index.php">
                     <img src="./assets/logoBlack.png" width="70%">
                 </a>
-                <form class="row g-2 justify-content-end" method="POST">
+                <form class="row g-2 justify-content-end" method="POST" action="validaLogin.php">
                     <div class="col-auto">
-                        <label for="inputPassword2" class="visually">E-mail</label>
-                        <input type="text" class="form-control" name="email" autofocus
-                            placeholder="user@etec.sp.gov.br">
+                        <label class="visually">E-mail</label>
+                        <input type="email" class="form-control" name="email" autofocus
+                            placeholder="user@etec.sp.gov.br" required>
                     </div>
                     <div class="col-auto">
-                        <label for="inputPassword2" class="visually">Senha</label>
+                        <label class="visually">Senha</label>
                         <input type="password" class="form-control" name="senha" placeholder="*********">
                         <!-- <a class="text-black" href="#">Esqueceu a senha?</a> -->
                     </div>
@@ -83,6 +58,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
                 </form>
             </div>
         </nav>
+       
     </header>
 
     <main>
@@ -107,7 +83,7 @@ if (isset($_POST['email']) || isset($_POST['senha'])) { //se existir começar o 
         </div>
 
     </main>
-    
+
     </main>
     <footer class="gradient">
     </footer>
