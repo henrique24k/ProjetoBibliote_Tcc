@@ -22,19 +22,19 @@ session_start();
 <body>
 
     <header>
-    <?php
-        if (isset($_GET["mensagem"])) {
-            
-      
-        ?>
-        <div class="alert alert-danger" role="alert">
-            <h3>
-            <?php
-                echo $_GET["mensagem"];
-            ?>
-            </h3>
-        </div>
         <?php
+        if (isset($_GET["mensagem"])) {
+
+
+            ?>
+            <div class="alert alert-danger" role="alert">
+                <h3>
+                    <?php
+                    echo $_GET["mensagem"];
+                    ?>
+                </h3>
+            </div>
+            <?php
         }
         ?>
         <nav class="navbar">
@@ -42,21 +42,6 @@ session_start();
                 <a class="navbar-brand" href="index.php">
                     <img src="./assets/logo.png" width="70%">
                 </a>
-                <ul class="nav justify-content-center m-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active text-black" href="index.php">Início
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Acervo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Comunidade</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Serviços</a>
-                    </li>
-                </ul>
                 <a class="navbar-brand" href="loginUser.php">
                     <img src="./assets/userLogo.png" width="70%">
                 </a>
@@ -73,42 +58,44 @@ session_start();
             <form action="cadastrar.php" method="POST" enctype="multpart/form-data">
                 <div class="mb-3">
                     <label>Nome</label>
-                    <input name="nome" type="text" class="form-control">
+                    <input name="nome" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>Sobrenome</label>
-                    <input name="sobrenome" type="text" class="form-control">
+                    <input name="sobrenome" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>Curso</label>
-                    <input name="curso" type="text" class="form-control">
+                    <input name="curso" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>Periodo</label>
-                    <input name="periodo" type="text" class="form-control">
+                    <input name="periodo" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>Instituição</label>
-                    <input name="instituicao" type="text" class="form-control">
+                    <input name="instituicao" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>E-mail</label>
-                    <input name="email" type="email" class="form-control">
+                    <input name="email" type="email" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Senha</label>
-                    <input name="senha" type="password" class="form-control">
+                    <input name="senha" type="password" class="form-control" required>
                 </div>
                 <div class="mb-3">
                     <label>Rg ou Rm</label>
-                    <input name="rgrm" type="text" class="form-control">
+                    <input name="rgrm" type="text" class="form-control" required>
                     </br>
                     <button class="btn btn-dark" type="submit">Cadastrar</button>
                 </div>
         </div>
         </form>
     </div>
-    </div>
+
+    <footer class="gradient">
+    </footer>
 
 
 </body>

@@ -57,11 +57,14 @@ if (isset($_FILES['arquivo'])) {
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
-                        <a class="nav-link active text-black" href="#">Início
+                        <a class="nav-link text-black" href="painel.php?email=<?php echo $_GET['email']; ?>">
+                            Feed
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="acervo.php">Acervo</a>
+                        <a class="nav-link text-black" href="acervo.php?email=<?php echo $_GET['email']; ?>">
+                            Acervo
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="#">Comunidade</a>
@@ -76,10 +79,6 @@ if (isset($_FILES['arquivo'])) {
             </div>
         </nav>
     </header>
-
-    <p>Gostaria de criar uma publicação,
-        <?php echo $_SESSION['name']; ?>
-    </p>
 
 
     <form enctype="multipart/form-data" method="POST">

@@ -25,11 +25,14 @@
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
-                        <a class="nav-link active text-black" href="painel.php">Início
+                        <a class="nav-link text-black" href="painel.php?email=<?php echo $_GET['email']; ?>">
+                            Feed
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="acervo.php">Acervo</a>
+                        <a class="btn btn-ligth" href="acervo.php?email=<?php echo $_GET['email']; ?>">
+                            Acervo
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="#">Comunidade</a>
@@ -38,17 +41,17 @@
                         <a class="nav-link text-black" href="#">Serviços</a>
                     </li>
                 </ul>
-                <a class="navbar-brand" href="perfil.php">
+                <a class="navbar-brand" href="perfil.php?email=<?php echo $_GET['email']; ?>">
                     <img src="./assets/userLogo.png" width="70%">
                 </a>
             </div>
         </nav>
     </header>
-
-    <div class="filtro">
+    <div class="mainAcervo">
+        <div class="filtro">
             <h3>Filtro</h3>
             <hr>
-            <h3 class="hfiltro">Genêro</h3>
+            <h3>Genêro</h3>
             <ul class="list-group">
                 <li class="">
                     <input class="form-check-input me-1" type="checkbox">
@@ -161,146 +164,157 @@
             </ul>
         </div>
 
-
-    <h3 class="hacervo">Top Avaliados</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/harry5.png" class="img-fluid rounded-start" alt="...">
+        <div class="acervoMain">
+            <h3>Top avaliados</h3>
+            <div class="container">
+                <div class="row g-2">
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 430px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagens/harry5.png" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <p>
+                                            <?php 
+                                        
+                                            // $login = $_POST ['login'];
+                                            // $senha = $_POST ['senha'];
+                                            
+                                            $host = "localhost:3306";
+                                            $user = "root";
+                                            $pass = "root";
+                                            $base = "sistemalogin";
+                                            $con = mysqli_connect($host, $user, $pass, $base);
+                                            $res = mysqli_query ($con, "select * from arquivos"); //consulta BD
+                                            
+                                            
+                                            //  executa o comando sql, no caso para pegar todos os usuários do sistema e retorna o valor da consulta em uma variável ($res)
+                                            
+                                            
+                                           
+                                            // enquanto houver dados na tabela 
+                                            while ($escrever = mysqli_fetch_array($res)){
+                                                echo$escrever;
+                                            }
+                                            
+                                            echo "</table> </br> </br>";
+                                            
+                                            mysqli_close($con);
+                                            
+                                            ?>
+                                            
+                                            
+                                
+                                        </p>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <button type="button" class="btn btn-dark">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 430px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagens/pijama.jpg" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <button type="button" class="btn btn-dark">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 430px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagens/principe.jpg" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <button type="button" class="btn btn-dark">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card mb-3" style="max-width: 430px;">
+                            <div class="row g-0">
+                                <div class="col-md-4">
+                                    <img src="./imagens/george.jpg" class="img-fluid rounded-start" alt="...">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Card title</h5>
+                                        <p class="card-text">This is a wider card with supporting text below as a
+                                            natural lead-in to
+                                            additional content. This content is a little bit longer.</p>
+                                        <button type="button" class="btn btn-dark">Reservar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
+            </div>
+            <h3>Todos os livros</h3>
+            <div class="container">
+                <div class="col-6">
+                    <div class="card mb-3" style="max-width: 430px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./imagens/it.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to
+                                        additional content. This content is a little bit longer.</p>
+                                    <button type="button" class="btn btn-dark">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="card mb-3" style="max-width: 430px;">
+                        <div class="row g-0">
+                            <div class="col-md-4">
+                                <img src="./imagens/star.jpg" class="img-fluid rounded-start" alt="...">
+                            </div>
+                            <div class="col-md-8">
+                                <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <p class="card-text">This is a wider card with supporting text below as a natural
+                                        lead-in to
+                                        additional content. This content is a little bit longer.</p>
+                                    <button type="button" class="btn btn-dark">Reservar</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/pijama.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
     </div>
-
-    <h3 class="hacervo">Aclamados pela critica</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/principe.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/george.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
-
-    <h3 class="hacervo">Queridinhos do Cinema</h3>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/star.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card mb-3" style="max-width: 430px;">
-            <div class="row g-0">
-                <div class="col-md-4">
-                    <img src="./imagens/it.jpg" class="img-fluid rounded-start" alt="...">
-                </div>
-                <div class="col-md-8">
-                    <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.</p>
-                        <button type="button" class="btn btn-dark">Reservar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- parte baixo -->
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-        <div class="card" style="width: 10rem;">
-            <img src="./imagens/harry1.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="#" class="btn btn-dark">Reservar</a>
-            </div>
-        </div>
-        <div class="card" style="width: 10rem;">
-            <img src="./imagens/harry2.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="#" class="btn btn-dark">Reservar</a>
-            </div>
-        </div>
-        <div class="card" style="width: 10rem;">
-            <img src="./imagens/harry3.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="#" class="btn btn-dark">Reservar</a>
-            </div>
-        </div>
-        <div class="card" style="width: 10rem;">
-            <img src="./imagens/harry4.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="#" class="btn btn-dark">Reservar</a>
-            </div>
-        </div>
-        <div class="card" style="width: 10rem;">
-            <img src="./imagens/harry5.png" class="card-img-top" alt="...">
-            <div class="card-body">
-                <a href="#" class="btn btn-dark">Reservar</a>
-            </div>
-        </div>
-    </div>
-
 
 </body>
 

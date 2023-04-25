@@ -36,11 +36,14 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
-                        <a class="nav-link active text-black" href="#">Início
+                        <a class="nav-link text-black" href="painel.php?email=<?php echo $_GET['email']; ?>">
+                            Feed
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="acervo.php">Acervo</a>
+                        <a class="nav-link text-black" href="acervo.php?email=<?php echo $_GET['email']; ?>">
+                            Acervo
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="#">Comunidade</a>
@@ -59,10 +62,11 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
     <div class="row-nav">
         <div class="col-2">
             <div class="list-group">
-                <a class="list-group-item list-group-item-action" href="#list-profile" role="tab"
+                <a class="list-group-item list-group-item-action" href="index.php" role="tab"
                     aria-controls="list-profile">Pagina Inicial</a>
-                <a class="list-group-item list-group-item-action" href="acervo.php" role="tab"
-                    aria-controls="list-profile">Acervo</a>
+                <a class="list-group-item list-group-item-action" href="acervo.php?email=<?php echo $_GET['email']; ?>">
+                    Acervo
+                </a>
                 <a class="list-group-item list-group-item-action" href="#list-messages" role="tab"
                     aria-controls="list-messages">Comunidade</a>
                 <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
@@ -84,14 +88,16 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
 
     <div class="containerFeed">
         <?php
-        while ($arquivo = mysqli_fetch_assoc($res)){
+        while ($arquivo = mysqli_fetch_assoc($res)) {
 
-        ?>
-        <p><?php echo $arquivo['texto'];?></p>
-        <img src=" <?php echo $arquivo['path'];?>" width="10%" />
-        <?php
-        };
-            mysqli_close($con);
+            ?>
+            <p>
+                <?php echo $arquivo['texto']; ?>
+            </p>
+            <?php
+        }
+        ;
+        mysqli_close($con);
         ?>
     </div>
 
