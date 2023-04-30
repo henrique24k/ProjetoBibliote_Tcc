@@ -27,7 +27,6 @@
                     <img src="./assets/userLogo.png" width="40%">
                     Login
                 </a>
-            </div>
         </nav>
     </header>
 
@@ -37,7 +36,11 @@
             <div class="foto-entrar">
                 <img src="./assets/mc.png" class="img" width="100%">
                 <a href="loginUser.php" class="btn btn-dark">Entrar</a>
+                <div class="foto-entrar">
+                    <a href="./admin/loginAdmin.php" class="btn btn-dark">Admin</a>
+                </div>
             </div>
+
             <div class="foto-pc">
                 <img src="./assets/pc.png" class="img" width="100%">
             </div>
