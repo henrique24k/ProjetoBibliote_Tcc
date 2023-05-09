@@ -42,7 +42,7 @@ $query = $mysqli->query($sql);
                             </td>
                             <td>
                                 <a href=""> Editar </a> |
-                                <a href=""> Excluir </a>
+                                <a href="excluir.php"> Excluir </a>
                             </td>
 
                         </tr>
