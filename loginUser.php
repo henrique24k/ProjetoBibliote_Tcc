@@ -75,9 +75,9 @@
                 <div class="col-sm">
                     <h3>Entre em nossa comunidade</h3>
                     <p>Registre-se, seja parte de nossos leitores</p>
-                    <div class="col-auto">
+                    <!-- <div class="col-auto">
                         <a href="cadastro.php"><button type="submit" class="btn btn-dark mt-6">Registrar</button></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

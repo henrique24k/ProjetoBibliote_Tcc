@@ -55,9 +55,6 @@ $query = $mysqli->query($sql);
             ?>
         </div>
 
-        <div class="card-footer text-muted">
-            Footer
-        </div>
     </div>
 </body>
 

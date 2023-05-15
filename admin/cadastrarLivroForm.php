@@ -26,7 +26,7 @@ $query = $mysqli->query($sql);
                     <input name="sinopse" type="text" class="form-control" required>
                 </div>
                 <div class="mb-3">
-                    <label>Path</label>
+                    <label>Imagem</label>
                     <input name="path" type="file">
                 </div>
                 
