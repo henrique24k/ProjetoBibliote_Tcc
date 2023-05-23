@@ -36,9 +36,6 @@
             <div class="foto-entrar">
                 <img src="./assets/mc.png" class="img" width="100%">
                 <a href="loginUser.php" class="btn btn-dark">Entrar</a>
-                <div class="foto-entrar">
-                    <a href="./admin/loginAdmin.php" class="btn btn-dark">Admin</a>
-                </div>
             </div>
 
             <div class="foto-pc">

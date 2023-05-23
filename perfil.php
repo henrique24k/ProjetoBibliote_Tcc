@@ -43,7 +43,7 @@ mysqli_close($con);
     <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
         <div class="card p-4">
             <div class=" image d-flex flex-column justify-content-center align-items-left ">
-                <img class="rounded-4" src="./imagens/george.jpg" height="100" width="100" />
+                <img class="rounded-4" src="./logo/perfil.png" height="100" width="100" />
                 <span class="name mt-3">
                     <?php
                     echo $escrever['nome'] . PHP_EOL;
