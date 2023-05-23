@@ -3,9 +3,9 @@ session_start();
 include('conexao.php');
 
 $host = "localhost:3306";
-$user = "root";
-$pass = "root";
-$base = "sistemaLogin";
+$user = "tcc_cade_meu_livro";
+$pass = "tcc_cade_meu_livro";
+$base = "tcc_cade_meu_livro";
 $con = mysqli_connect($host, $user, $pass, $base);
 
 $sql = sprintf('select * from usuario where email="%s"', $_GET['email']);

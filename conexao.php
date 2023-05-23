@@ -1,8 +1,8 @@
 <?php
-$usuario = 'root';
-$senha = 'root';
-$database = 'sistemaLogin';
-$host = 'localhost';
+$usuario = 'tcc_cade_meu_livro';
+$senha = 'tcc_cade_meu_livro';
+$database = 'tcc_cade_meu_livro';
+$host = 'localhost:3306';
 
 $mysqli = new mysqli($host, $usuario, $senha, $database);
 

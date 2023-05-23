@@ -1,9 +1,9 @@
 <?php
 session_start();
 $host = "localhost:3306";
-$user = "root";
-$pass = "root";
-$base = "sistemalogin";
+$user = "tcc_cade_meu_livro";
+$pass = "tcc_cade_meu_livro";
+$base = "tcc_cade_meu_livro";
 $con = mysqli_connect($host, $user, $pass, $base);
 $res = mysqli_query($con, "SELECT * FROM resenha ORDER BY idResenha desc"); //consulta BD
 $escrever = mysqli_fetch_array($res);
