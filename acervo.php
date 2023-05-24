@@ -42,8 +42,8 @@ include('conexao.php');
                 </li>
             </ul>
             <a class="navbar-brand" href="perfil.php?email=<?php echo $_GET['email']; ?>">
-                    <img src="./assets/userLogo.png" width="70%">
-                </a>
+                <img src="./assets/userLogo.png" width="70%">
+            </a>
         </div>
     </nav>
 </header>

@@ -13,4 +13,6 @@ $senha = $_POST['senha'];
 $res = mysqli_query($conexao, "update usuario set nome = '$nome', sobrenome = '$sobrenome', curso = '$curso',  periodo = '$periodo', instituicao = '$instituicao', email = '$email', senha = '$senha' where id = $id");
 echo "Dados alterados com sucesso!";
 
+header(sprintf('location: perfil.php?email=%s', $_POST['email']));
+
 ?>

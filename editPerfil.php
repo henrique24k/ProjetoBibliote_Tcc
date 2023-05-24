@@ -27,9 +27,6 @@
         <button class="btn btn-primary" name="enviar">Alterar</button>
     </form>
 
-    <button type="button" class="btn btn-dark"><a href="perfil.php">voltar</a></button>
-    
-    
 
 </body>
 

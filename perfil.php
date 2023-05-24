@@ -2,7 +2,7 @@
 session_start();
 include('conexao.php');
 
-$host = "localhost:3306";
+$host = "10.67.168.200";
 $user = "tcc_cade_meu_livro";
 $pass = "tcc_cade_meu_livro";
 $base = "tcc_cade_meu_livro";
@@ -72,7 +72,7 @@ mysqli_close($con);
                 </span>
                 <span>
                     <?php
-                    echo $escrever['rgrm'];
+                    echo $escrever['rm'];
                     ?>
                 </span>
                 <div class=" d-flex mt-2">

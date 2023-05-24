@@ -2,7 +2,7 @@
 session_start();
 include('conexao.php');
 
-$id = $_SESSION["idUser"];
+$id = $_SESSION["id"];
 
 if (isset($_SESSION)) {
 

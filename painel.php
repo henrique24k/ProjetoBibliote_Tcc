@@ -1,6 +1,6 @@
 <?php
 session_start();
-$host = "localhost:3306";
+$host = "10.67.168.200";
 $user = "tcc_cade_meu_livro";
 $pass = "tcc_cade_meu_livro";
 $base = "tcc_cade_meu_livro";
@@ -67,8 +67,10 @@ $nomeUsuario = mysqli_fetch_array($res2)['nome'];
         <div class="resenhas">
             <div class="aside">
                 <div class="list-group">
-                <a href="painel.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/pg.png" width="12%">Pagina inicial</a>
-                    <a href="acervo.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/acervo.png" width="12%">Acervo</a>
+                    <a href="painel.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/pg.png" width="12%">Pagina
+                        inicial</a>
+                    <a href="acervo.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/acervo.png"
+                            width="12%">Acervo</a>
                     <a href="#list-settings" role="tab"><img src="./logo/resenha.png" width="15%">Resenhas</a>
                     <a href="perfil.php?email=<?php echo $_GET['email']; ?>">
                         <img src="./logo/perfil.png" width="15%"> Perfil
@@ -86,7 +88,10 @@ $nomeUsuario = mysqli_fetch_array($res2)['nome'];
                                 <form action="salvar_comentario.php" method="GET">
                                     <textarea name="comentario" placeholder="E aí, como foi a leitura?"></textarea><br>
                                     <hr>
-                                    <input class="btn btn-dark" type="submit" value="Resenhar">
+                                    <!-- <input class="btn btn-dark" type="submit" value="Resenhar"> -->
+                                    <a href="painel.php?email=<?php echo $_GET['email']; ?>">
+                                        <button type=submit>Resenhar</button>
+                                    </a>
                                 </form>
                             </div>
                         </div>
