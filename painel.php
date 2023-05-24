@@ -1,11 +1,17 @@
 <?php
-
-$host = "localhost:3306";
-$user = "root";
-$pass = "root";
-$base = "sistemalogin";
+session_start();
+$host = "10.67.168.200";
+$user = "tcc_cade_meu_livro";
+$pass = "tcc_cade_meu_livro";
+$base = "tcc_cade_meu_livro";
 $con = mysqli_connect($host, $user, $pass, $base);
-$res = mysqli_query($con, "select * from arquivos"); //consulta BD
+$res = mysqli_query($con, "SELECT * FROM resenha ORDER BY idResenha desc"); //consulta BD
+$escrever = mysqli_fetch_array($res);
+$res2 = mysqli_query($con, "SELECT nome FROM usuario");
+$nomeUsuario = mysqli_fetch_array($res2)['nome'];
+
+
+
 
 ?>
 
@@ -23,11 +29,10 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-    <title>Time Line</title>
+    <title>Cadê meu livro?</title>
 </head>
 
 <body>
-
     <header>
         <nav class="navbar">
             <div class="container">
@@ -36,11 +41,14 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
                 </a>
                 <ul class="nav justify-content-center m-auto">
                     <li class="nav-item">
-                        <a class="nav-link active text-black" href="#">Início
+                        <a class="nav-link text-black" href="painel.php?email=<?php echo $_GET['email']; ?>">
+                            Feed
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-black" href="acervo.php">Acervo</a>
+                        <a class="nav-link text-black" href="acervo.php?email=<?php echo $_GET['email']; ?>">
+                            Acervo
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-black" href="#">Comunidade</a>
@@ -55,49 +63,62 @@ $res = mysqli_query($con, "select * from arquivos"); //consulta BD
             </div>
         </nav>
     </header>
+    <main>
+        <div class="resenhas">
+            <div class="aside">
+                <div class="list-group">
+                    <a href="painel.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/pg.png" width="12%">Pagina
+                        inicial</a>
+                    <a href="acervo.php?email=<?php echo $_GET['email']; ?>"><img src="./logo/acervo.png"
+                            width="12%">Acervo</a>
+                    <a href="#list-settings" role="tab"><img src="./logo/resenha.png" width="15%">Resenhas</a>
+                    <a href="perfil.php?email=<?php echo $_GET['email']; ?>">
+                        <img src="./logo/perfil.png" width="15%"> Perfil
+                    </a>
+                </div>
+            </div>
+            <div class="resenhaConteudo">
+                <div class="col-12">
+                    <div class="list-group">
+                        <div class="list-group-item list-group-item-action">
+                            <h1>Página inicial</h1>
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                            <div class="escreverPostagem">
+                                <form action="salvar_comentario.php" method="GET">
+                                    <textarea name="comentario" placeholder="E aí, como foi a leitura?"></textarea><br>
+                                    <hr>
+                                    <!-- <input class="btn btn-dark" type="submit" value="Resenhar"> -->
+                                    <a href="painel.php?email=<?php echo $_GET['email']; ?>">
+                                        <button type=submit>Resenhar</button>
+                                    </a>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="list-group-item list-group-item-action">
+                            <?php
+                            while ($escrever = mysqli_fetch_array($res)) {
+                                ?>
 
-    <div class="row-nav">
-        <div class="col-2">
-            <div class="list-group">
-                <a class="list-group-item list-group-item-action" href="#list-profile" role="tab"
-                    aria-controls="list-profile">Pagina Inicial</a>
-                <a class="list-group-item list-group-item-action" href="acervo.php" role="tab"
-                    aria-controls="list-profile">Acervo</a>
-                <a class="list-group-item list-group-item-action" href="#list-messages" role="tab"
-                    aria-controls="list-messages">Comunidade</a>
-                <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
-                    aria-controls="list-settings">Resenhas</a>
-                <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
-                    aria-controls="list-settings">Notificações</a>
-                <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
-                    aria-controls="list-settings">Configurações</a>
-                <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
-                    aria-controls="list-settings">Privacidade</a>
-                <a class="list-group-item list-group-item-action" href="#list-settings" role="tab"
-                    aria-controls="list-settings">Perfil</a>
-                <a class="btn btn-dark" href="criarPubli.php?email=<?php echo $_GET['email']; ?>">
-                    Resenhar
-                </a>
+                                <div class="postagem">
+                                    <p>
+                                        <?php echo $nomeUsuario; ?> -
+                                        <?php echo $escrever['dataResenha']; ?>
+                                    </p>
+                                    <p>
+                                        <?php echo $escrever['textoResenha']; ?>
+                                    </p>
+                                </div>
+                                <?php
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="containerFeed">
-        <?php
-        while ($arquivo = mysqli_fetch_assoc($res)){
-
-        ?>
-        <p><?php echo $arquivo['texto'];?></p>
-        <img src=" <?php echo $arquivo['path'];?>" width="10%" />
-        <?php
-        };
-            mysqli_close($con);
-        ?>
-    </div>
-
+        </div>
+        <main>
 </body>
-
-</html>
-
 
 </html>

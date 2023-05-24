@@ -19,26 +19,30 @@ p{
     font-family: 'Poppins', sans-serif;
 }
 
-.row{
-       justify-content: right;
-       align-items: center;
-       display: inline-block;
-       margin-left: 0;
-       margin-right: 0;
+.mainAcervo{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 3rem;
+
+}
+
+.acervoMain{
+    width: 100%;
+    align-items: center;
+}
+
+.acervoMain h3{
+    margin-left: 31.5vw;
 }
 
 .filtro{
-    background-color: grey;
+    background-color: whitesmoke;
     width:20%;
     text-decoration: none;
     text-align: center;
-    display: inline-block;
-    
+
 }
 
-.hacervo{
-    text-align: center;
-}
 
 .hfiltro{
     text-align:left;
@@ -109,6 +113,245 @@ p{
     padding:10px;
 }
 
+/* começa daqui o perfil */
+
+.card {
+    width: 350px;
+    background-color: #efefef;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+.image img {
+    transition: all 0.5s
+}
+
+.card:hover .image img {
+    transform: scale(1.5)
+}
+
+.name {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.idd {
+    font-size: 14px;
+    font-weight: 600
+}
+
+.idd1 {
+    font-size: 12px
+}
+
+.number {
+    font-size: 22px;
+    font-weight: bold
+}
+
+.follow {
+    font-size: 12px;
+    font-weight: 500;
+    color: #444444
+}
+
+.btn1 {
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #000;
+    color: #aeaeae;
+    font-size: 15px
+}
+
+.text span {
+    font-size: 13px;
+    color: #545454;
+    font-weight: 500
+}
+
+.icons i {
+    font-size: 19px
+}
+
+hr .new1 {
+    border: 1px solid
+}
+
+.join {
+    font-size: 14px;
+    color: #a0a0a0;
+    font-weight: bold
+}
+
+.date {
+    background-color: #ccc
+}
+
+html, body {
+    overflow-x: hidden;
+   }
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    font-family: 'Poppins', sans-serif;
+}
+
+h3{
+    font-family: 'Poppins', sans-serif;
+}
+
+p{
+    font-family: 'Poppins', sans-serif;
+}
+
+.row{
+       justify-content: right;
+       align-items: center;
+       display: inline-block;
+       margin-left: 0;
+       margin-right: 0;
+}
+
+.filtro{
+    background-color: grey;
+    width:20%;
+    text-decoration: none;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+.hacervo{
+    text-align: center;
+}
+
+.hfiltro{
+    text-align:left;
+}
+
+.banners{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.foto-entrar a{
+    margin-left: 45%;
+    width: 10rem;
+    border-radius: 30px;
+}
+
+ .col-auto button{
+    width: 10rem;
+    border-radius: 5px;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+.col-sm button{
+    width: 75%;
+    height: 3.2rem;
+}
+/*-------------------------------------------------------*/
+.gradient{
+    margin-top: 5rem;
+    height: 20rem;
+    background: linear-gradient(90deg, rgba(226,215,107,1) 0%, rgba(149,191,120,1) 47%, rgba(119,139,208,1) 100%);
+}
+
+.poster{
+    width: 100%;
+    height: 35rem;
+    border-radius: 50px;
+    padding: 30px;
+}
+
+.logoLogin{   
+    width:7%;
+    margin-left: 45%;
+    margin-top: 10%;
+}
+
+.login{
+    background-color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxLogin{
+    margin-top:50px;
+    width: 400px;
+    height: 65rem;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 4px 4px 4px 4px grey;
+}
+
+.mb-3{
+    padding:10px;
+}
+
+.resenhas{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 2rem;
+}
+
+.aside{
+    margin-top: 2rem;
+    width: 15%;
+}
+
+.resenhaConteudo{
+    margin-left: 5rem;
+    max-width: 70%;
+    min-width: 70%;
+}
+
+.resenhaConteudo .list-group{
+    width: 70%;
+}
+
+.postagem{
+    border: solid black 0.1px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 1rem;
+    width: 100%;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.escreverPostagem{
+    padding: 10px;
+}
+
+.escreverPostagem textarea{
+    border: none;
+    width: 100%;
+    max-width: 100ch;
+}
+
+.escreverPostagem input{
+    border-radius: 50px;
+}
+
+.list-group a{
+    padding: 1.5rem 1rem 1rem 0;
+    font-weight: bolder;
+    text-decoration: none;
+    color: black;
+}
 
 
 

@@ -23,25 +23,10 @@
                 <a class="navbar-brand" href="index.php">
                     <img src="./assets/logo.png" width="70%">
                 </a>
-                <ul class="nav justify-content-center m-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active text-black" href="#">Início
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Acervo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Comunidade</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#">Serviços</a>
-                    </li>
-                </ul>
                 <a class="navbar-brand" href="loginUser.php">
-                    <img src="./assets/userLogo.png" width="70%">
+                    <img src="./assets/userLogo.png" width="40%">
+                    Login
                 </a>
-            </div>
         </nav>
     </header>
 
@@ -52,6 +37,7 @@
                 <img src="./assets/mc.png" class="img" width="100%">
                 <a href="loginUser.php" class="btn btn-dark">Entrar</a>
             </div>
+
             <div class="foto-pc">
                 <img src="./assets/pc.png" class="img" width="100%">
             </div>
